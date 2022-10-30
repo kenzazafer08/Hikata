@@ -157,7 +157,15 @@ nav{
    margin: 10px;
    padding: 10px;
 }
-
+#sushi{
+    display: none;
+}
+#Tteokboki{
+    display: none;
+}
+#ramen{
+    display: none;
+}
 footer {
     background: transparent;
     text-align: center;
@@ -377,7 +385,7 @@ footer {
         float: left;
         margin-top: 5px;
     }
-    .dropdown:hover{
+    \*.dropdown:hover{
         height: 300px;
     }
     .dropdown:hover nav{
