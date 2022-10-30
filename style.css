@@ -385,7 +385,7 @@ footer {
         float: left;
         margin-top: 5px;
     }
-    \*.dropdown:hover{
+    .dropdown:hover{
         height: 300px;
     }
     .dropdown:hover nav{
