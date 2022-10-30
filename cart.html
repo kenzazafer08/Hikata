@@ -42,12 +42,9 @@
         <img src="images/bannier.png"/>
         <div class="banner">
             <h2 class="head"> Your Order </h2>
-            <p style="padding: 10px;">Spicy tunna   120DH<span style="float: right;">&times;</span></p>
-            <p style="padding: 10px;">Kitaka Ramen   70DH<span style="float: right;">&times;</span></p>
-            <p style="padding: 10px;">Tteokboki cheese   80DH<span style="float: right;">&times;</span></p>
+            <div id="p" style="padding: 10px; padding-top: 0%;"></div>
             <div class="foot">
-                <h4>Total 0 DH</h4>
-                <a class="button2">Calcul</a>
+                <h4 id="price">Total 0 DH</h4>
             </div>
         </div>
       </div>
@@ -60,63 +57,63 @@
        <h3>Inaruzushi</h3>
        <p><small>Sushi rice is stuffed inside pouches of fried tofu! A delicious snack</small></p>
        <p>100 DH</p>
-       <a class="button">Add</a></div>
+       <button class="button" id="0" ,>Add</button></div>
     </article>
     <article class="type" style="background-image: url('images/spicy-tunna.png');">
         <div class="disc">
        <h3>Spicy Tunna</h3>
        <p><small>Away from the traditional nigiri, spicy tuna is packed with filings and sauce.</small></p>
        <p>120 DH</p>
-       <a class="button">Add</a></div>
+       <button class="button" id="1" onclick="addproduct()">Add</button></div>
     </article>
     <article class="type" style="background-image: url('images/philadolphiaroll.png');">
         <div class="disc">
        <h3>Philadelphia Roll</h3>
        <p><small>Philadelphia rolls are a type of sushi that is typically made with smoked salmon, cream cheese, and cucumber.</small></p>
        <p>110 DH</p>
-       <a class="button">Add</a></div>
+       <button button class="button" id="2" onclick="addproduct()">Add</button></div>
     </article>
     <article class="type" style="background-image: url('images/sappororamen.png');">
         <div class="disc">
        <h3>Sapporo Ramen</h3>
        <p><small>This dish is the best when using a base soup that makes use of the miso flavor that intertwines with thick crinkled noodles.</small></p>
        <p>150 DH</p>
-       <a class="button">Add</a></div>
+       <button button class="button" id="3" onclick="addproduct()">Add</button></div>
     </article>
     <article class="type" style="background-image: url('images/Hakodate\ Ramen.png');">
         <div class="disc">
        <h3>Hakodate Ramen</h3>
        <p><small>One of the three major ramen in Hokkaido.  also considered as one of the famous local gourmet in Hokkaido prefecture.</small></p>
        <p>90 DH</p>
-       <a class="button">Add</a></div>
+       <button button class="button" id="4" onclick="addproduct()">Add</button></div>
     </article>
     <article class="type" style="background-image: url('images/Kitakaramen.png');">
         <div class="disc">
        <h3>Kitaka Ramen</h3>
        <p><small>It’s noodles—thick and slightly curly thanks to its maturation process—are also a distinctive feature of the dish.</small></p>
        <p>70 DH</p>
-       <a class="button">Add</a></div>
+       <button button class="button" id="5" onclick="addproduct()">Add</button></div>
     </article>
     <article class="type" style="background-image: url('images/teokbokisheese.png');">
         <div class="disc">
        <h3>Tteokbokki Cheese</h3>
        <p><small>The cheese will coat the tteokbokki and the savoury taste of gochujang sauce and other special sauces enchance the taste. </small></p>
        <p>80 DH</p>
-       <a class="button">Add</a></div>
+       <button button class="button" id="6" onclick="addproduct()">Add</button></div>
     </article>
     <article class="type" style="background-image: url('images/Rakobi.png');">
         <div class="disc">
        <h3>Rabokki</h3>
        <p><small>Ramen and tteok will be well mixed with the special sauce. It is simply delicious and everyone should try it.</small></p>
        <p>130 DH</p>
-       <a class="button">Add</a></div>
+       <button button class="button" id="7" onclick="addproduct()">Add</button></div>
     </article>
     <article class="type" style="background-image: url('images/ordinaryteo.png');">
         <div class="disc">
        <h3>Ordinary Tteokbokki</h3>
        <p><small>Ordinary tteokbokki with the special sauce and fish cake </small></p>
        <p>60 DH</p>
-       <a class="button">Add</a></div>
+       <button button class="button" id="8" onclick="addproduct()">Add</button></div>
     </article>
 </div>
 <div class="grid-container" id="sushi" >
@@ -205,6 +202,7 @@
     </div><!--/.container-->   
 </footer>
 <script>
+    
     function food(){
     const f = document.getElementById('food').value 
     switch(f){
@@ -234,6 +232,27 @@
         break;
     }
 }
+    let prix = [100,120,110,150,90,70,80,130,60]
+    let name = ['inaruzushi','Spicy Tune','Philadelphia roll','Sapporo Ramen','Hakotada ramen','Kitaka ramen','Tteokboki cheese','Rabokki','Ordinary Tteokboki']
+    let totalPrice = 0
+    let prixButtons = document.querySelectorAll('button');
+    prixButtons.forEach(function(button) {
+    button.addEventListener('click', function(e){
+        e.preventDefault();
+        let id = button.getAttribute('id');
+        let pr = prix[id]
+    let n = name[id] 
+    const AboutMe = `${n}  ${pr} ` 
+    let p = document.createElement('p')
+    p.innerHTML = AboutMe
+    let parent = document.getElementById('p')
+    parent.appendChild(p)
+    let totalElement = document.getElementsByClassName('foot')
+        totalPrice += prix[id]
+        let Total = `Total : ${totalPrice}  DH` 
+        document.getElementById('price').innerHTML = Total 
+  })
+})
 </script>
 </body>
 </html>
