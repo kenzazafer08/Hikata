@@ -409,7 +409,7 @@ footer {
     text-decoration: none;
     cursor: pointer;
   }
-@media screen and (max-width: 600px){
+  @media all and (max-width: 600px){
     #home p{
         width: 300px;
     }
