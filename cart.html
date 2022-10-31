@@ -39,9 +39,9 @@
         <option value="Tteokboki">Tteokboki</option>
       </select><button class="button" onclick="food()">Filter</button>
       <div class="bannier">
-        <img src="images/bannier.png"/>
-        <div class="banner">
-            <h2 class="head"> Your Order </h2>
+        <button onclick="popup()" style="background-color: white; border:none;"><img src="images/bannier.png" /></button>
+        <div class="banner" id="banner">
+            <h2 class="head"> Your Order <span class="close" style="float: right;">&times;</span> </h2>
             <div id="p" style="padding: 10px; padding-top: 0%;"></div>
             <div class="foot">
                 <h4 id="price">Total 0 DH</h4>

@@ -43,9 +43,6 @@
         p.innerHTML = AboutMe
         let parent = document.getElementById('p')
         parent.appendChild(p)
-        let close = p.getElementsByClassName('close2')
-        
-        let totalElement = document.getElementsByClassName('foot')
             totalPrice += prix[id]
       })
     })
@@ -61,14 +58,14 @@
     
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
-    
+    var span2 = document.getElementsByClassName("close")[1];
     // When the user clicks on the button, open the modal
     btn.onclick = function() {
       modal.style.display = "block";
     }
-    
+   
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
+    span2.onclick = function() {
       modal.style.display = "none";
     }
     
@@ -77,5 +74,12 @@
       if (event.target == modal) {
         modal.style.display = "none";
       }
+    } 
+    
+    function popup() {
+      document.getElementById('banner').style.display = 'block'
+    }
+    span.onclick = function() {
+     document.getElementById('banner').style.display = 'none'
     }
     
