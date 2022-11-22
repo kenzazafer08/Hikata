@@ -206,11 +206,8 @@ footer {
   /* Dropdown Content (Hidden by Default) */
  .dropdown nav {
     display: none;
-    position: absolute;
     background-color: #ffffff;
     width: 100%;
-    margin-top: 75px;
-    margin-left: 0;
     text-align: center;
   }
   /* Links inside the dropdown */
@@ -218,7 +215,6 @@ footer {
     text-decoration: none;
     color: rgb(0, 0, 0);
     display: block;
-    padding: 12px,12px,12px,12px;
   }
  .dropdown nav ul li a :hover{
     color: #7F2D2B;
@@ -434,13 +430,11 @@ footer {
         float: left;
         margin-top: 5px;
     }
-    .dropdown:hover{
-        height: 300px;
-    }
     .dropdown:hover nav{
         display: flex;
-        flex-direction: row;
-        height: 300px;
+        flex-direction: column;
+        height: 160px;
+        width: 100%;
     }
     #About{
         flex-direction: column;
@@ -483,6 +477,12 @@ footer {
       .banner{
         right: 10px;
       }
+      .grid-container .type{
+        width: 340px;
+        height: 270px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 }
 
 
