@@ -40,6 +40,7 @@
         let n = name[id] 
         const AboutMe = `<div id="${id}">${n}  <span style="float:right" class="close2" >${pr} &times</span> </div>` 
         let p = document.createElement('p')
+        p.classList.add('test');
         p.innerHTML = AboutMe
         let parent = document.getElementById('p')
         parent.appendChild(p)
@@ -62,6 +63,9 @@
     // When the user clicks on the button, open the modal
     btn.onclick = function() {
       modal.style.display = "block";
+      let parent = document.getElementById('banner');
+      let p = document.getElementById('p');
+      parent.removeChild(p);
     }
    
     // When the user clicks on <span> (x), close the modal
